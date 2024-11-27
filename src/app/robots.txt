@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Disallow: /cdn-cgi/
+Disallow: /register/
+Disallow: /login/
+Disallow: /register
+Disallow: /login
+Disallow: /api/
+
+Sitemap: https://www.ajkerpatrika.com/sitemap.xml
+Sitemap: https://www.ajkerpatrika.com/news-sitemap.xml

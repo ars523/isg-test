@@ -1,0 +1,452 @@
+@font-face {
+  font-family: "ajp";
+  src: url("../assets/fonts/VarendraAP-Light_v7.ttf") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/VarendraAP-Light_v7.ttf"); /* Older Browsers */
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "ajp";
+  src: url("../assets/fonts/VarendraAP-Regular_v7.ttf") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/VarendraAP-Regular_v7.ttf"); /* Older Browsers */
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ajp";
+  src: url("../assets/fonts/VarendraAP-Semibold_v7.ttf") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/VarendraAP-Semibold_v7.ttf"); /* Older Browsers */
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "ajp";
+  src: url("../assets/fonts/VarendraAP-Bold_v7.ttf") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/VarendraAP-Bold_v7.ttf"); /* Older Browsers */
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "ajp";
+  src: url("../assets/fonts/VarendraAP-Black_v7.ttf") format("woff2"),
+    /* Modern Browsers */ url("../assets/fonts/VarendraAP-Black_v7.ttf"); /* Older Browsers */
+  font-weight: 900;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+}
+:root {
+  --swiper-navigation-size: 10px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 10px;
+  --swiper-navigation-color: white;
+  --golden1: #faa61a;
+}
+
+* {
+  font-family: "ajp", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: #000000;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink-animation {
+  @apply animate-blink;
+}
+
+@layer utilities {
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+}
+
+/***********************************************************************************/
+/*******************Story Details Rich Text Editor Styles Start*********************/
+/***********************************************************************************/
+
+.story-details h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.story-details h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+}
+.story-details h3 {
+  font-size: 1.17em;
+  margin: 0.83em 0;
+}
+.story-details h5 {
+  font-size: 0.83em;
+  margin: 1.5em 0;
+}
+.story-details h6 {
+  font-size: 0.75em;
+  margin: 1.67em 0;
+}
+.story-details h1,
+.story-details h2,
+.story-details h3,
+.story-details h4,
+.story-details h5,
+.story-details h6 {
+  font-weight: bolder;
+}
+
+.story-details ul {
+  list-style-type: disc;
+  /* list-style-position: inside; */
+  margin-bottom: 10px;
+  margin-left: 24px;
+}
+
+.story-details ol {
+  list-style-type: none;
+  list-style-position: inside;
+  counter-reset: bengali-counter;
+  margin-bottom: 10px;
+}
+
+.story-details ul ul,
+.story-details ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.story-details ol ol,
+.story-details ul ol {
+  list-style-type: none;
+  margin-left: 15px;
+  counter-reset: bengali-counter;
+  margin-bottom: 10px;
+}
+
+.story-details ol li {
+  counter-increment: bengali-counter;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+
+.story-details ol li::before {
+  content: counter(bengali-counter, bengali) ". ";
+  font-family: "ajp", sans-serif;
+  position: absolute;
+  left: 0;
+  width: 25px;
+  text-align: right;
+}
+
+.story-details .bodytext-image {
+  width: 100%;
+}
+
+.story-details .richtext-image.right {
+  margin-left: auto;
+}
+
+.story-details ul li {
+  margin-bottom: 8px;
+}
+
+.interview-sub-heading ul li {
+  margin-bottom: 16px !important;
+}
+
+.story-details p {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+.story-details p:last-child {
+  margin-bottom: 16px;
+}
+
+.story-details a {
+  color: #1e88e5;
+}
+
+.story-details a:hover {
+  color: var(--golden1);
+}
+
+.story-details .block-full_richtext  iframe {
+  /* Adjust this value as needed */
+  width: 100%;
+  max-height: 850px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  min-height: 480px;
+}
+
+/* custom design for blockquote  */
+.story-details blockquote::before {
+  content: "‘‘";
+  font-size: 4rem;
+  font-weight: bold;
+  position: absolute;
+  display: block;
+  color: #00878a;
+  top: -40px;
+  left: 30px;
+}
+
+.story-details blockquote {
+  font-size: 1.5rem;
+  color: rgb(135, 135, 135);
+  font-weight: bold;
+  padding: 0px 30px;
+  padding-top: 8px;
+  position: relative;
+  margin: 36px 0 24px 0;
+}
+.story-details blockquote br {
+  display: none !important;
+}
+
+.story-details blockquote b br {
+  display: none;
+}
+
+.story-details blockquote b {
+  display: block;
+  color: #333;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1px;
+  line-height: normal;
+}
+
+.story-details blockquote i {
+  color: #333;
+  font-style: normal;
+  font-size: 1rem;
+  display: block;
+  line-height: normal;
+}
+.story-details blockquote i br {
+  display: none;
+}
+
+/* custom design for also read */
+.story-details .block-also_read a {
+  display: flex !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  gap: 10px !important;
+  align-items: center !important;
+  margin: 24px 0px !important;
+  position: relative;
+  padding: 28px 16px !important;
+  background-color: #f2f2f2;
+}
+
+.story-details .block-also_read a::before {
+  content: "আরো পড়ুন";
+  display: block;
+  background-color: #00878a;
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  padding: 0 6px;
+  right: 0;
+  top: 0;
+  line-height: 24px;
+}
+
+.story-details .block-also_read a:hover {
+  color: var(--golden1);
+}
+
+@media (min-width: 1200px) {
+  .story-details .block-also_read a {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    gap: 20px !important;
+    padding: 28px !important;
+    background-color: #f2f2f2;
+    margin: 24px 30px !important;
+  }
+}
+
+.story-details .block-also_read a img {
+  width: 120px !important;
+  height: auto;
+}
+
+/* Custom design for block table */
+.block-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+/* .block-title {
+   font-size: 1.5em;
+   font-weight: bold;
+   margin-bottom: 10px;
+ } */
+
+.block-table table {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.block-table th,
+.block-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.block-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.block-table td {
+  vertical-align: top;
+}
+.block-table img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* custom design for big fact */
+.story-details .bigfact-text-class {
+  margin: 24px 30px;
+  font-size: 24px;
+  border-bottom: 4px solid #00878a;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 12px;
+  background: #f2f2f2;
+  color: rgb(135, 135, 135);
+}
+
+.story-details .center-text-class {
+  display: block;
+  text-align: center;
+}
+
+/***********************************************************************************/
+/*******************Story Details Rich Text Editor Styles end*********************/
+/***********************************************************************************/
+
+/***********************************************************************************/
+/*******************Story Sub heading Rich Text Editor Styles start*********************/
+/***********************************************************************************/
+.story-details.sub-heading ul li {
+  margin-bottom: 0px !important;
+}
+/***********************************************************************************/
+/*******************Story Sub heading Rich Text Editor Styles end*********************/
+/***********************************************************************************/
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer components {
+  .border-right {
+    @apply relative before:block lg:before:w-[1px] last:before:w-[0px] before:h-full before:absolute before:z-20 before:top-0 lg:before:-right-[18px] before:bg-[#BEBDBD];
+  }
+  .border-bottom {
+    @apply relative before:block before:h-[1px] last:before:h-0 before:w-full before:absolute before:left-0 before:-bottom-[19px] before:bg-[#BEBDBD];
+  }
+}
+
+/* Swiper pagination styles */
+
+.story-with-slider .swiper-pagination {
+  position: relative !important;
+  margin-top: 10px !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgba(255, 0, 0, 1) !important;
+}
+
+/* Swiper navigation styles */
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(0, 0, 0, 0.764) !important;
+  border-radius: 100% !important;
+}
+
+.swiper-button-next::after {
+  font-size: 16px !important;
+}
+
+.swiper-button-prev:after {
+  font-size: 16px !important;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+
+.ant-picker-content tr th {
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+/* ----------- css style for print content --------------- */
+@media print {
+  @page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .print-content {
+    page-break-before: always;
+  }
+}
+
+figcaption {
+  background-color: #f0f0ed;
+  padding: 4px 8px 4px 8px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #757575;
+  border-bottom: 1px solid #d1d1d1;
+}
